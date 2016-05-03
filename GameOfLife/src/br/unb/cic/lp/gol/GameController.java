@@ -56,9 +56,15 @@ public class GameController {
 		}
 	}
 	
-	public void nextGeneration() {
+	public void nextGeneration(boolean infinity) {
 		engine.nextGeneration();
-		board.update();
+		if (infinity) {
+			board.updateInfinity();
+		} else {
+			board.update();
+		}
+		
+		
 	}
 	
 }

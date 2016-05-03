@@ -22,6 +22,7 @@ public class GameView {
 	private static final int CONWAY = 3;
 	private static final int HIGH_LIFE = 4; 
 	private static final int HALT = 5; 
+	private static final int AUTO_GENERATION = 6;
 
 	private GameEngine engine;
 	private GameController controller;
@@ -50,6 +51,24 @@ public class GameView {
 		}
 		printOptions();
 	}
+	
+	public void updateInfinity(){
+		printFirstRow();
+		printLine();
+		for (int i = 0; i < engine.getHeight(); i++) {
+			for (int j = 0; j < engine.getWidth(); j++) {
+				System.out.print(engine.isCellAlive(i, j) ? ALIVE_CELL : DEAD_CELL);
+			}
+			System.out.println("   " + i);
+			printLine();
+		}
+		try {
+		    Thread.sleep(1000);                 
+		} catch(InterruptedException ex) {
+		    Thread.currentThread().interrupt();
+		}
+		nextGeneration(true);
+	}
 
 	private void printOptions() {
 		Scanner s = new Scanner(System.in);
@@ -63,6 +82,7 @@ public class GameView {
 			System.out.println("[3] Conway");
 			System.out.println("[4] High Life");
 			System.out.println("[5] Halt");
+			System.out.println("[6] Automatic Generations");
 		
 			System.out.print("\n \n Option: ");
 			
@@ -71,10 +91,11 @@ public class GameView {
 		
 		switch(option) {
 			case MAKE_CELL_ALIVE : makeCellAlive(); break;
-			case NEXT_GENERATION : nextGeneration(); break;
+			case NEXT_GENERATION : nextGeneration(false); break;
 			case CONWAY : engine.setEstrategia(new Conway()); update(); break;
 			case HIGH_LIFE : engine.setEstrategia(new HighLife()); update();break;
-			case HALT : halt();
+			case HALT : halt();break;
+			case AUTO_GENERATION : nextGeneration(true);
 		}
 	}
 	
@@ -95,8 +116,8 @@ public class GameView {
 		controller.makeCellAlive(i, j);
 	}
 	
-	private void nextGeneration() {
-		controller.nextGeneration();
+	private void nextGeneration(boolean infinity) {
+		controller.nextGeneration(infinity);
 	}
 	
 	private void halt() {
@@ -124,6 +145,9 @@ public class GameView {
 		}
 		else if(option.equals("5")) {
 			return HALT;
+		}
+		else if(option.equals("6")){
+			return AUTO_GENERATION;
 		}
 		else return INVALID_OPTION;
 	}
