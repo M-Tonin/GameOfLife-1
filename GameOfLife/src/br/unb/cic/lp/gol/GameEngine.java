@@ -152,7 +152,8 @@ public class GameEngine {
 		int alive = 0;
 		for (int a = i - 1; a <= i + 1; a++) {
 			for (int b = j - 1; b <= j + 1; b++) {
-				if (validPosition(a, b)  && (!(a==i && b == j)) && cells[a][b].isAlive()) {
+				int [] position = setPosition(a, b);
+				if ((!(a==i && b == j)) && cells[position[0]][position[1]].isAlive()) {
 					alive++;
 				}
 			}
@@ -165,6 +166,28 @@ public class GameEngine {
 	 */
 	private boolean validPosition(int a, int b) {
 		return a >= 0 && a < height && b >= 0 && b < width;
+	}
+	
+	private int [] setPosition(int a, int b){
+		if(validPosition(a, b)){
+			return new int []{a,b};
+		}
+		int returnA = a;
+		int returnB = b;
+		
+		if(a==-1){
+			returnA = height - 1;
+		}else if(a == height){
+			returnA = 0;
+		}
+		
+		if(b==-1){
+			returnB = width - 1;
+		}else if(b == width){
+			returnB=0;
+		}
+		
+		return new int[]{returnA,returnB};
 	}
 
 	/* Metodos de acesso as propriedades height e width */
