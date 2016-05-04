@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
 import br.unb.cic.lp.gol.GameController;
 import br.unb.cic.lp.gol.GameEngine;
@@ -53,6 +54,20 @@ public class GUI {
 			}
 		}
 		janela.setVisible(true);
+	}
+	
+	public void refreshInfinite(){
+		
+		janela.remove(painelDeBotoes);
+
+		final Timer timer = new Timer(1000, new ActionListener() {
+			public void actionPerformed(ActionEvent evt) {
+				refresh();
+				controller.getBoard().processChoice("2");
+			}    
+		});
+
+		timer.start();
 	}
 	
 	private void preparaOptionButtonsPanel() {

@@ -45,12 +45,7 @@ public class GameView {
 	}
 	
 	public void updateInfinity(){
-		int i=0;
-		//evitar stack OverFlow
-		do {
-			controller.getGui().refresh();
-			nextGeneration(false);
-		} while (i<3);
+		controller.getGui().refreshInfinite();
 	}
 
 	public void processChoice(String choice) {
