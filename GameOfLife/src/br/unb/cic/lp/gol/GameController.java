@@ -47,6 +47,7 @@ public class GameController {
 	}
 	
 	public void start() {
+		gui.mostraTela();
 		board.update();
 	}
 	

@@ -41,34 +41,16 @@ public class GameView {
 	 * possivelmente como uma resposta a uma atualizacao do jogo.
 	 */
 	public void update() {
-		printFirstRow();
-		printLine();
-		for (int i = 0; i < engine.getHeight(); i++) {
-			for (int j = 0; j < engine.getWidth(); j++) {
-				System.out.print(engine.isCellAlive(i, j) ? ALIVE_CELL : DEAD_CELL);
-			}
-			System.out.println("   " + i);
-			printLine();
-		}
-		controller.getGui().mostraTela();
+		controller.getGui().refresh();
 	}
 	
 	public void updateInfinity(){
-		printFirstRow();
-		printLine();
-		for (int i = 0; i < engine.getHeight(); i++) {
-			for (int j = 0; j < engine.getWidth(); j++) {
-				System.out.print(engine.isCellAlive(i, j) ? ALIVE_CELL : DEAD_CELL);
-			}
-			System.out.println("   " + i);
-			printLine();
-		}
-		try {
-		    Thread.sleep(1000);                 
-		} catch(InterruptedException ex) {
-		    Thread.currentThread().interrupt();
-		}
-		nextGeneration(true);
+		int i=0;
+		//evitar stack OverFlow
+		do {
+			controller.getGui().refresh();
+			nextGeneration(false);
+		} while (i<3);
 	}
 
 	public void processChoice(String choice) {
