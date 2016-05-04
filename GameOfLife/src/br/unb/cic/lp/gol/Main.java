@@ -23,10 +23,12 @@ public class Main {
 		engine.setEstrategia(new Conway());
 		
 		GameView board = new GameView(controller, engine);
+		GUI Interface = new GUI(controller);
 		
 		controller.setBoard(board);
 		controller.setEngine(engine);
 		controller.setStatistics(statistics);
+		controller.setGui(Interface);
 		
 		controller.start();
 	}

@@ -14,7 +14,16 @@ public class GameController {
 	private GameEngine engine;
 	private GameView board;
 	private Statistics statistics;
+	private GUI gui;
 	
+	public GUI getGui() {
+		return gui;
+	}
+
+	public void setGui(GUI gui) {
+		this.gui = gui;
+	}
+
 	public GameEngine getEngine() {
 		return engine;
 	}

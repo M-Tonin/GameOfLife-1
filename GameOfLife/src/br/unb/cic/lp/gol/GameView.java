@@ -1,6 +1,7 @@
 package br.unb.cic.lp.gol;
 
 import java.util.Scanner;
+import javax.swing.*;
 
 import br.unb.cic.lp.gol.estrategias.Conway;
 import br.unb.cic.lp.gol.estrategias.HighLife;
@@ -49,7 +50,7 @@ public class GameView {
 			System.out.println("   " + i);
 			printLine();
 		}
-		printOptions();
+		controller.getGui().mostraTela();
 	}
 	
 	public void updateInfinity(){
@@ -70,23 +71,11 @@ public class GameView {
 		nextGeneration(true);
 	}
 
-	private void printOptions() {
-		Scanner s = new Scanner(System.in);
-		int option;
+	public void processChoice(String choice) {
 		System.out.println("\n \n");
-		
+		int option;
 		do {
-			System.out.println("Select one of the options: (" + engine.getEstrategia().getName() + ")\n \n"); 
-			System.out.println("[1] Make a cell alive");
-			System.out.println("[2] Next generation");
-			System.out.println("[3] Conway");
-			System.out.println("[4] High Life");
-			System.out.println("[5] Halt");
-			System.out.println("[6] Automatic Generations");
-		
-			System.out.print("\n \n Option: ");
-			
-			option = parseOption(s.nextLine());
+			option = parseOption(choice);
 		}while(option == 0);
 		
 		switch(option) {
