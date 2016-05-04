@@ -47,6 +47,7 @@ public class GUI {
 	}
 	
 	private void preparaBotoes(){
+		//TODO Botão Make a cell alive deve chamar outra tela, passando as coordenadas X e Y, que atualmente são pedidas no console
 		preparaBotao("Make a cell alive","1");
 		preparaBotao("Next generation","2");
 		preparaBotao("Conway","3");
