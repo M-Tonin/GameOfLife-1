@@ -2,6 +2,8 @@ package br.unb.cic.lp.gol;
 
 import java.security.InvalidParameterException;
 
+import br.unb.cic.lp.gol.GUI.GUI;
+
 /**
  * Classe que atua como um controlador do 
  * padrao MVC, separando os componentes da 

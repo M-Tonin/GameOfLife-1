@@ -1,9 +1,11 @@
-package br.unb.cic.lp.gol;
+package br.unb.cic.lp.gol.GUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
+
+import br.unb.cic.lp.gol.GameController;
 
 public class GUI {
 	private JFrame janela;

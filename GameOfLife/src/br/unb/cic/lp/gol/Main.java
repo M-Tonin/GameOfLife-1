@@ -1,5 +1,6 @@
 package br.unb.cic.lp.gol;
 
+import br.unb.cic.lp.gol.GUI.GUI;
 import br.unb.cic.lp.gol.estrategias.Conway;
 
 /**
