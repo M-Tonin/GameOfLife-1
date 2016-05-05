@@ -10,7 +10,7 @@ import br.unb.cic.lp.gol.GameEngine;
 
 public class CellButton extends JButton implements ActionListener {
 	
-	ImageIcon alive,dead;
+	ImageIcon alive,dead,dead2;
 	private boolean isAlive;
 	
 	public int iPos;
@@ -24,12 +24,13 @@ public class CellButton extends JButton implements ActionListener {
 		this.iPos=i;
 		this.jPos=j;
 		this.engine = engine;
-		//dead = new ImageIcon(this.getClass().getResource("image/Dead.png"));
+		dead = new ImageIcon(this.getClass().getResource("image/Dead.png"));
+		dead2 = new ImageIcon(this.getClass().getResource("image/dead2.png"));
 	}
 	
 	public void Kill(){
 		isAlive = false;
-		setIcon(null);
+		setIcon(dead);
 	}
 	
 	public void Create(){
@@ -43,7 +44,7 @@ public class CellButton extends JButton implements ActionListener {
 		if(isAlive){
 			setIcon(alive);
 		}else{
-			setIcon(null);
+			setIcon(dead2);
 		}
 	}
 }
