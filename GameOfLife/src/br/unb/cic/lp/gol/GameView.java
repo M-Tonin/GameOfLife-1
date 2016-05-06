@@ -3,8 +3,13 @@ package br.unb.cic.lp.gol;
 import java.util.Scanner;
 import javax.swing.*;
 
-import br.unb.cic.lp.gol.estrategias.Conway;
-import br.unb.cic.lp.gol.estrategias.HighLife;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+
+
+
+import org.springframework.core.io.FileSystemResource;
+
 
 /**
  * Atua como um componente de apresentacao (view), exibindo o estado atual do
@@ -49,6 +54,10 @@ public class GameView {
 	}
 
 	public void processChoice(String choice) {
+		BeanFactory factory = new XmlBeanFactory(new FileSystemResource("spring.xml"));
+	
+		EstrategiaDeDerivacao conway=(EstrategiaDeDerivacao)factory.getBean("conway");
+		EstrategiaDeDerivacao highlife=(EstrategiaDeDerivacao)factory.getBean("highlife");
 		System.out.println("\n \n");
 		int option;
 		do {
@@ -58,8 +67,8 @@ public class GameView {
 		switch(option) {
 			case MAKE_CELL_ALIVE : makeCellAlive(); break;
 			case NEXT_GENERATION : nextGeneration(false); break;
-			case CONWAY : engine.setEstrategia(new Conway()); update(); break;
-			case HIGH_LIFE : engine.setEstrategia(new HighLife()); update();break;
+			case CONWAY : engine.setEstrategia(conway); update(); break;
+			case HIGH_LIFE : engine.setEstrategia(highlife); update();break;
 			case HALT : halt();break;
 			case AUTO_GENERATION : nextGeneration(true);
 		}

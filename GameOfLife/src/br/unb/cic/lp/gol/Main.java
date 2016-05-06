@@ -3,9 +3,6 @@ package br.unb.cic.lp.gol;
 import br.unb.cic.lp.gol.GUI.GUI;
 
 import br.unb.cic.lp.gol.estrategias.Conway;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Classe que define o metodo principal do programa; ou 
@@ -17,6 +14,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
 
 	public static void main(String args[]) {
+		
 		GameController controller = new GameController();
 		
 		Statistics statistics = new Statistics();
