@@ -44,7 +44,7 @@ public class CellButton extends JButton implements ActionListener {
 		if(isAlive){
 			setIcon(alive);
 		}else{
-			setIcon(dead2);
+			setIcon(dead);
 		}
 	}
 }
