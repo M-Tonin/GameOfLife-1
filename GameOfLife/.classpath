@@ -2,5 +2,44 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Spring"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/spring.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/spring-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/commons-logging-1.2/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/commons-logging-1.2/commons-logging-1.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/weaving-sources/spring-agent-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/weaving-sources/spring-aspects-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/weaving-sources/spring-tomcat-weaver-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/weaving/spring-agent.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/weaving/spring-aspects.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/weaving/spring-tomcat-weaver.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/module-sources/spring-aop-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/module-sources/spring-beans-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/module-sources/spring-context-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/module-sources/spring-context-support-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/module-sources/spring-core-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/module-sources/spring-jdbc-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/module-sources/spring-jms-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/module-sources/spring-orm-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/module-sources/spring-test-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/module-sources/spring-tx-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/module-sources/spring-webmvc-portlet-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/module-sources/spring-webmvc-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/module-sources/spring-webmvc-struts-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/module-sources/spring-web-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/modules/spring-aop.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/modules/spring-beans.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/modules/spring-context.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/modules/spring-context-support.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/modules/spring-core.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/modules/spring-jdbc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/modules/spring-jms.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/modules/spring-orm.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/modules/spring-test.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/modules/spring-tx.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/modules/spring-web.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/modules/spring-webmvc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/modules/spring-webmvc-portlet.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/modules/spring-webmvc-struts.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

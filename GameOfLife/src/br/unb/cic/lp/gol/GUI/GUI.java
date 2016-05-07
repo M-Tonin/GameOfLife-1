@@ -10,8 +10,18 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
+import org.springframework.core.io.FileSystemResource;
+
+import br.unb.cic.lp.gol.EstrategiaDeDerivacao;
 import br.unb.cic.lp.gol.GameController;
 import br.unb.cic.lp.gol.GameEngine;
+import br.unb.cic.lp.gol.estrategias.RegrasList;
 
 public class GUI {
 	private JFrame janela;
@@ -19,6 +29,12 @@ public class GUI {
 	private JPanel painelDeBotoes;
 	private GameController controller;
 	private CellButton celulas[][];
+	
+	String teste;
+	
+	
+	 
+		           
 	
 	public GUI(GameController controller){
 		this.controller = controller;
@@ -88,11 +104,11 @@ public class GUI {
 	}
 	
 	private void preparaBotoes(){
+		
 		optionButton("Next generation","2");
-		optionButton("Conway","3");
-		optionButton("High Life","4");
-		optionButton("Halt","5");
-		optionButton("Automatic Generations","6");
+		optionButton("Regras","3");
+		optionButton("Halt","4");
+		optionButton("Automatic Generations","5");
 	}
 	
 	private void preparaTabuleiro(){

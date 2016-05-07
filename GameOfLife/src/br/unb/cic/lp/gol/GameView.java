@@ -1,10 +1,19 @@
 package br.unb.cic.lp.gol;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import javax.swing.*;
 
-import br.unb.cic.lp.gol.estrategias.Conway;
-import br.unb.cic.lp.gol.estrategias.HighLife;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
+import org.springframework.core.io.FileSystemResource;
+
+import br.unb.cic.lp.gol.estrategias.RegrasList;
+
 
 /**
  * Atua como um componente de apresentacao (view), exibindo o estado atual do
@@ -20,10 +29,10 @@ public class GameView {
 	private static final int INVALID_OPTION = 0;
 	private static final int MAKE_CELL_ALIVE = 1;
 	private static final int NEXT_GENERATION = 2;
-	private static final int CONWAY = 3;
-	private static final int HIGH_LIFE = 4; 
-	private static final int HALT = 5; 
-	private static final int AUTO_GENERATION = 6;
+	private static final int REGRAS = 3; 
+	private static final int HALT = 4; 
+	private static final int AUTO_GENERATION = 5;
+	String teste;
 
 	private GameEngine engine;
 	private GameController controller;
@@ -49,6 +58,11 @@ public class GameView {
 	}
 
 	public void processChoice(String choice) {
+		
+		
+		 BeanFactory factory = new XmlBeanFactory(new FileSystemResource("spring.xml"));
+		
+	
 		System.out.println("\n \n");
 		int option;
 		do {
@@ -58,8 +72,28 @@ public class GameView {
 		switch(option) {
 			case MAKE_CELL_ALIVE : makeCellAlive(); break;
 			case NEXT_GENERATION : nextGeneration(false); break;
-			case CONWAY : engine.setEstrategia(new Conway()); update(); break;
-			case HIGH_LIFE : engine.setEstrategia(new HighLife()); update();break;
+			case REGRAS :
+			List<String> regrasstring = new ArrayList<String>();
+				//ID INJECCTION
+			ApplicationContext xml = new FileSystemXmlApplicationContext("C:/Users/Pietro/Documents/GameOfLife/GameOfLife/spring.xml");
+			 RegrasList listaderegras = (RegrasList) xml.getBean("regraslist");
+			
+			 for(EstrategiaDeDerivacao regrai: listaderegras.getRegras()){ 
+				        teste=  regrai.getName();
+				        regrasstring.add(teste);
+				        //System.out.println(teste);
+				          }
+			 String input = (String) JOptionPane.showInputDialog(null, "Choose now...",
+				        "Escolha a regra:", JOptionPane.QUESTION_MESSAGE, null,regrasstring.toArray(), // Array of choices
+				        null); 
+			 //System.out.println(input);
+			 EstrategiaDeDerivacao regra_escolhida=(EstrategiaDeDerivacao)factory.getBean(input);
+
+			 
+			 //ID INJECTION
+			 
+			 //
+				engine.setEstrategia(regra_escolhida); update(); break;
 			case HALT : halt();break;
 			case AUTO_GENERATION : nextGeneration(true);
 		}
@@ -104,15 +138,13 @@ public class GameView {
 			return NEXT_GENERATION;
 		}
 		else if (option.equals("3")) {
-			return CONWAY;
+			return REGRAS;
 		}
-		else if (option.equals("4")) {
-			return HIGH_LIFE;
-		}
-		else if(option.equals("5")) {
+		
+		else if(option.equals("4")) {
 			return HALT;
 		}
-		else if(option.equals("6")){
+		else if(option.equals("5")){
 			return AUTO_GENERATION;
 		}
 		else return INVALID_OPTION;
