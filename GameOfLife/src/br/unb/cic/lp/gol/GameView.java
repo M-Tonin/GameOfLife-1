@@ -81,13 +81,10 @@ public class GameView {
 			 for(EstrategiaDeDerivacao regrai: listaderegras.getRegras()){ 
 				        teste=  regrai.getName();
 				        regrasstring.add(teste);
-				        System.out.println(teste);
+				        //System.out.println(teste);
 				          }
 			 String input = (String) JOptionPane.showInputDialog(null, "Choose now...",
-				        "Escolha a regra:", JOptionPane.QUESTION_MESSAGE, null, // Use
-				                                                                        // default
-				                                                                        // icon
-				        regrasstring.toArray(), // Array of choices
+				        "Escolha a regra:", JOptionPane.QUESTION_MESSAGE, null,regrasstring.toArray(), // Array of choices
 				        null); 
 			 System.out.println(input);
 			 EstrategiaDeDerivacao regra_escolhida=(EstrategiaDeDerivacao)factory.getBean(input);
@@ -95,7 +92,7 @@ public class GameView {
 			 
 			 //ID INJECTION
 			 
-			 
+			 //
 				engine.setEstrategia(regra_escolhida); update(); break;
 			case HALT : halt();break;
 			case AUTO_GENERATION : nextGeneration(true);
