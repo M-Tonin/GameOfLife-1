@@ -106,10 +106,9 @@ public class GUI {
 	private void preparaBotoes(){
 		
 		optionButton("Next generation","2");
-		optionButton("Menu","3");
-		optionButton("High Life","4");
-		optionButton("Halt","5");
-		optionButton("Automatic Generations","6");
+		optionButton("Regras","3");
+		optionButton("Halt","4");
+		optionButton("Automatic Generations","5");
 	}
 	
 	private void preparaTabuleiro(){
