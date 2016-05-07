@@ -15,9 +15,10 @@ import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.core.io.FileSystemResource;
 
-
+import br.unb.cic.lp.gol.EstrategiaDeDerivacao;
 import br.unb.cic.lp.gol.GameController;
 import br.unb.cic.lp.gol.GameEngine;
 import br.unb.cic.lp.gol.estrategias.RegrasList;
@@ -29,9 +30,12 @@ public class GUI {
 	private GameController controller;
 	private CellButton celulas[][];
 	
+	String teste;
 	
-	 //final ApplicationContext xml = new ClassPathXmlApplicationContext("spring.xml");
-//	private RegrasList listaregras=(RegrasList)xml.getBean("regras");
+	
+	 
+		           
+	
 	public GUI(GameController controller){
 		this.controller = controller;
 		preparaTela();
@@ -100,8 +104,9 @@ public class GUI {
 	}
 	
 	private void preparaBotoes(){
+		
 		optionButton("Next generation","2");
-		optionButton("Conway","3");
+		optionButton("Menu","3");
 		optionButton("High Life","4");
 		optionButton("Halt","5");
 		optionButton("Automatic Generations","6");

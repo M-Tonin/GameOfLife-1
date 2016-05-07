@@ -31,6 +31,7 @@ public class GameView {
 	private static final int HIGH_LIFE = 4; 
 	private static final int HALT = 5; 
 	private static final int AUTO_GENERATION = 6;
+	String teste;
 
 	private GameEngine engine;
 	private GameController controller;
@@ -57,11 +58,9 @@ public class GameView {
 
 	public void processChoice(String choice) {
 		
-		 ApplicationContext context = new FileSystemXmlApplicationContext("C:/Users/Pietro/Documents/GameOfLife/GameOfLife/spring.xml");
-		 RegrasList listaderegras = (RegrasList) context.getBean("regraslist");
-		 listaderegras.getRegras();
+		
 		 BeanFactory factory = new XmlBeanFactory(new FileSystemResource("spring.xml"));
-		//listaderegras = (RegrasList)context.getBean("regraslist");
+		
 	
 		EstrategiaDeDerivacao conway=(EstrategiaDeDerivacao)factory.getBean("conway");
 		EstrategiaDeDerivacao highlife=(EstrategiaDeDerivacao)factory.getBean("highlife");
@@ -74,7 +73,16 @@ public class GameView {
 		switch(option) {
 			case MAKE_CELL_ALIVE : makeCellAlive(); break;
 			case NEXT_GENERATION : nextGeneration(false); break;
-			case MENU : engine.setEstrategia(conway); update(); break;
+			case MENU :
+			//ID INJECCTION
+			ApplicationContext xml = new FileSystemXmlApplicationContext("C:/Users/Pietro/Documents/GameOfLife/GameOfLife/spring.xml");
+			 RegrasList listaderegras = (RegrasList) xml.getBean("regraslist");
+			 for(EstrategiaDeDerivacao regrai: listaderegras.getRegras()){ 
+				        teste=  regrai.getName();
+				        System.out.println(teste);
+				          } 
+			 //ID INJECTION
+				engine.setEstrategia(conway); update(); break;
 			case HIGH_LIFE : engine.setEstrategia(highlife); update();break;
 			case HALT : halt();break;
 			case AUTO_GENERATION : nextGeneration(true);
