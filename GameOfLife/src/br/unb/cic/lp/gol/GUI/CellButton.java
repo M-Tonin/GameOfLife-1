@@ -25,7 +25,7 @@ public class CellButton extends JButton implements ActionListener {
 		this.jPos=j;
 		this.engine = engine;
 		dead = new ImageIcon(this.getClass().getResource("image/Dead.png"));
-		dead2 = new ImageIcon(this.getClass().getResource("image/dead2.png"));
+		//dead2 = new ImageIcon(this.getClass().getResource("image/dead2.png"));
 	}
 	
 	public void Kill(){

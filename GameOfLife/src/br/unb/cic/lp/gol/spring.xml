@@ -3,7 +3,7 @@
 <beans>
 
 	<bean id="regraslist" class="br.unb.cic.lp.gol.estrategias.RegrasList" scope="prototype" >
-		<property name="regras">
+		<property name="EstrategiaDeDerivacao">
 		<list>
 		<ref bean="conway" />
 		<ref bean="highlife" />
@@ -11,7 +11,7 @@
 		</list>
 		</property>
 	</bean>
-<bean id="conway"  class="br.unb.cic.lp.gol.estrategias.Conway" scope="prototype"/>
-<bean id="highlife"  class="br.unb.cic.lp.gol.estrategias.HighLife" scope="prototype"/>
-<bean id="livefreeordie"  class="br.unb.cic.lp.gol.estrategias.LiveFreeOrDie" scope="prototype"/>
+<bean id="conway"  class="br.unb.cic.lp.gol.estrategias.Conway" />
+<bean id="highlife"  class="br.unb.cic.lp.gol.estrategias.HighLife" />
+<bean id="livefreeordie"  class="br.unb.cic.lp.gol.estrategias.LiveFreeOrDie" />
 </beans>

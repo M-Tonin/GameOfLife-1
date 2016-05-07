@@ -10,8 +10,17 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.io.FileSystemResource;
+
+
 import br.unb.cic.lp.gol.GameController;
 import br.unb.cic.lp.gol.GameEngine;
+import br.unb.cic.lp.gol.estrategias.RegrasList;
 
 public class GUI {
 	private JFrame janela;
@@ -20,6 +29,9 @@ public class GUI {
 	private GameController controller;
 	private CellButton celulas[][];
 	
+	
+	 //final ApplicationContext xml = new ClassPathXmlApplicationContext("spring.xml");
+//	private RegrasList listaregras=(RegrasList)xml.getBean("regras");
 	public GUI(GameController controller){
 		this.controller = controller;
 		preparaTela();

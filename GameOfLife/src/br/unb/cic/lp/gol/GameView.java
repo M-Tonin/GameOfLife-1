@@ -5,10 +5,12 @@ import javax.swing.*;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
-
-
-
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.core.io.FileSystemResource;
+
+import br.unb.cic.lp.gol.estrategias.RegrasList;
 
 
 /**
@@ -25,7 +27,7 @@ public class GameView {
 	private static final int INVALID_OPTION = 0;
 	private static final int MAKE_CELL_ALIVE = 1;
 	private static final int NEXT_GENERATION = 2;
-	private static final int CONWAY = 3;
+	private static final int MENU = 3;
 	private static final int HIGH_LIFE = 4; 
 	private static final int HALT = 5; 
 	private static final int AUTO_GENERATION = 6;
@@ -54,7 +56,12 @@ public class GameView {
 	}
 
 	public void processChoice(String choice) {
-		BeanFactory factory = new XmlBeanFactory(new FileSystemResource("spring.xml"));
+		
+		 ApplicationContext context = new FileSystemXmlApplicationContext("C:/Users/Pietro/Documents/GameOfLife/GameOfLife/spring.xml");
+		 RegrasList listaderegras = (RegrasList) context.getBean("regraslist");
+		 listaderegras.getRegras();
+		 BeanFactory factory = new XmlBeanFactory(new FileSystemResource("spring.xml"));
+		//listaderegras = (RegrasList)context.getBean("regraslist");
 	
 		EstrategiaDeDerivacao conway=(EstrategiaDeDerivacao)factory.getBean("conway");
 		EstrategiaDeDerivacao highlife=(EstrategiaDeDerivacao)factory.getBean("highlife");
@@ -67,7 +74,7 @@ public class GameView {
 		switch(option) {
 			case MAKE_CELL_ALIVE : makeCellAlive(); break;
 			case NEXT_GENERATION : nextGeneration(false); break;
-			case CONWAY : engine.setEstrategia(conway); update(); break;
+			case MENU : engine.setEstrategia(conway); update(); break;
 			case HIGH_LIFE : engine.setEstrategia(highlife); update();break;
 			case HALT : halt();break;
 			case AUTO_GENERATION : nextGeneration(true);
@@ -113,7 +120,7 @@ public class GameView {
 			return NEXT_GENERATION;
 		}
 		else if (option.equals("3")) {
-			return CONWAY;
+			return MENU;
 		}
 		else if (option.equals("4")) {
 			return HIGH_LIFE;
