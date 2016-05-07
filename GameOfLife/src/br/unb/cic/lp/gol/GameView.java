@@ -86,7 +86,7 @@ public class GameView {
 			 String input = (String) JOptionPane.showInputDialog(null, "Choose now...",
 				        "Escolha a regra:", JOptionPane.QUESTION_MESSAGE, null,regrasstring.toArray(), // Array of choices
 				        null); 
-			 System.out.println(input);
+			 //System.out.println(input);
 			 EstrategiaDeDerivacao regra_escolhida=(EstrategiaDeDerivacao)factory.getBean(input);
 
 			 
