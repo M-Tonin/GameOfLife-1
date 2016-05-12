@@ -5,9 +5,9 @@ Pietro Bertarini – 14/0159118
 Compilação:
 
 Para compilar o programa,importa as seguintes bibliotecas:
--spring-framework-2.5.5-with-dependencies;
--commons-logging-1.2-bin;
--regrasframework.jar(Encotrado dentro do GameOfLife);
+-spring-framework-2.5.5-with-dependencies
+-commons-logging-1.2-bin
+-regrasframework.jar(Encotrado dentro do GameOfLife)
 (Lembre-se de referenicar o .jar ao projeto principal e expotar corretamento o .jar ao projeto principal)
 -Execute pela main;
 obs:Se não rodar,procure por Pietro Bertarini ou Pedro Yan pois o programa foi executado com sucesso em estilo framework;
