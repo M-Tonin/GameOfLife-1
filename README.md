@@ -1,11 +1,12 @@
+READ BASEADO NO PDF ENCONTRADO DENTRO DO PROGRAMA,RECOMENDA-SE LER O PDF \n
 Game of Life
 Pedro Yan Ornelas – 14/0158995
 Pietro Bertarini – 14/0159118
 
 Compilação:
 
-Para compilar o programa,importa as seguintes bibliotecas:
--spring-framework-2.5.5-with-dependencies
+Para compilar o programa,importa as seguintes bibliotecas: 
+-spring-framework-2.5.5-with-dependencies 
 -commons-logging-1.2-bin
 -regrasframework.jar(Encotrado dentro do GameOfLife)
 (Lembre-se de referenicar o .jar ao projeto principal e expotar corretamento o .jar ao projeto principal)
