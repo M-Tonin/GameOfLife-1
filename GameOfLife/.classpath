@@ -41,5 +41,6 @@
 	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/modules/spring-webmvc.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/modules/spring-webmvc-portlet.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/spring-framework-2.5.5/dist/modules/spring-webmvc-struts.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pietro/Documents/GameOfLife/GameOfLife/regrasframework.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

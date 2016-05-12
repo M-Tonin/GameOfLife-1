@@ -6,7 +6,7 @@ import org.springframework.core.io.FileSystemResource;
 
 import br.unb.cic.lp.gol.GUI.GUI;
 
-import br.unb.cic.lp.gol.estrategias.Conway;
+//import br.unb.cic.lp.gol.estrategias.Conway;
 
 /**
  * Classe que define o metodo principal do programa; ou 
